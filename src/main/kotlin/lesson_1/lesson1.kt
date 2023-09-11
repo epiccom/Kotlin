@@ -1,5 +1,7 @@
 package lesson_1
 
 fun main(){
-    println("Тест")
+    val numberOfOrders: Int = 75
+    val notificationText: String = "Спасибо за покупку!"
+
 }
