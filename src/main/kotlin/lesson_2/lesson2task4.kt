@@ -9,4 +9,5 @@ fun main() {
 
     println("Кристаллов добыто: $crystal, 20% бафф: ${bCrystal.toInt()}")
     println("Железа добыто: $iron, 20% бафф: ${bIron.toInt()}")
+
 }
