@@ -1,15 +1,20 @@
 package lesson_3
 
 fun main() {
-    var move = "D2-D4;0"
+    val moveTotal = "D2-D4;0"
+    val sym = "-"
+    val sym1 = ";"
 
-    println(move)
+    val result = moveTotal.split(sym, sym1)
+    val move = result[2]
+    val where = result[1]
+    val from = result[0]
 
-    val from = "D2"
-    val where = "D4"
-    val num = 0
-
-    move = "$from-$where;$num"
-
-    println(move)
+    println(
+        """
+    $from,
+    $where,
+    $move.
+    """.trimIndent()
+    )
 }
