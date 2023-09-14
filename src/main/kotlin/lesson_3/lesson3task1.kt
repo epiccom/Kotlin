@@ -1,11 +1,13 @@
 package lesson_3
 
 fun main() {
-    val day = "день"
-    val night = "вечер"
+    var greeting = "Добрый день"
     val userName = "Иннокентий"
 
-    println("Добрый  $day, $userName!")
-    println("Добрый $night, $userName!")
+    println("$greeting, $userName!")
+
+    greeting = "Добрый вечер"
+
+    println("$greeting, $userName!")
 
 }
