@@ -1,15 +1,13 @@
 package lesson_5
 
-import kotlin.random.Random
-
 fun main() {
-    val sym = Random.nextInt(1,100)
-    val sym1 = Random.nextInt(1,100)
+    val a = (1..100).random()
+    val b = (1..100).random()
 
-    println("Для входа введите сумму чисел: $sym и $sym1")
+    println("Для входа введите сумму чисел: $a и $b")
 
-    val read = readln().toInt()
+    val result = readln().toInt()
 
-    if(read == sym+sym1) println("Добро пожаловать!")
+    if (result == a + b) println("Добро пожаловать!")
     else println("Доступ запрещен.")
 }
