@@ -1,15 +1,20 @@
 package lesson_4
 
 fun main() {
-    val day = 5
+    val hands = ODD
+    val legs = EVEN
+    val back = EVEN
+    val abdominal = ODD
 
     println(
         """
-        Упражнения для рук:   ${(day % 2) != 0}
-        Упражнения для ног:   ${(day % 2) == 0}
-        Упражнения для спины: ${(day % 2) == 0}
-        Упражнения для пресса:${(day % 2) != 0}
+        Упражнения для рук:   $hands
+        Упражнения для ног:   $legs
+        Упражнения для спины: $back
+        Упражнения для пресса:$abdominal
     """.trimIndent()
     )
-
 }
+const val DAY_NOW = 5
+const val EVEN: Boolean = DAY_NOW % 2 == 0
+const val ODD: Boolean = DAY_NOW % 2 != 0
