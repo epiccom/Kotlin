@@ -6,7 +6,7 @@ fun main() {
 
     println(
         "Груз с весом $weight кг и объемом $volume л соответствует категории 'Average':" +
-        "${(weight >= WEIGHT_MIN && weight <= WEIGHT_AND_VOLUME_MAX) && (volume <= WEIGHT_AND_VOLUME_MAX)}"
+        "${(weight >= WEIGHT_MIN && weight <= WEIGHT_MAX) && (volume <= VOLUME_MAX)}"
     )
 
     weight = 50
@@ -14,9 +14,10 @@ fun main() {
 
     println(
         "Груз с весом $weight кг и объемом $volume л соответствует категории 'Average':" +
-        "${(weight >= WEIGHT_MIN && weight <= WEIGHT_AND_VOLUME_MAX) && (volume <= WEIGHT_AND_VOLUME_MAX)}"
+        "${(weight >= WEIGHT_MIN && weight <= WEIGHT_MAX) && (volume <= VOLUME_MAX)}"
     )
 }
 
 const val WEIGHT_MIN = 35
-const val WEIGHT_AND_VOLUME_MAX = 100
+const val WEIGHT_MAX = 100
+const val VOLUME_MAX = 100
