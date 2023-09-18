@@ -14,9 +14,9 @@ fun main() {
     val food = result[2].toInt()
     val weather = result[3].toBoolean()
 
-    if (isDamaged == false && team in TEAM_MIN..TEAM_MAX && food >= FOOD_MIN && weather == true)
+    if (!isDamaged && team in TEAM_MIN..TEAM_MAX && food >= FOOD_MIN && weather)
         println("Корабль может отправляться в плавание!")
-    else if (team >= TEAM_MAX && food >= FOOD_MIN && weather == true)
+    else if (team >= TEAM_MAX && food >= FOOD_MIN && weather)
         println("Повреждения не значительны, корабль может отправляться в плавание!")
     else println("Повреждения критические, корабль не может отправляться в плавание!")
 
