@@ -8,12 +8,9 @@ fun main() {
     val yearOfBirth = readln().toInt()
     val year = LocalDate.now().year
 
-    if(year - yearOfBirth >= AGE_OF_MAJORITY) {
+    if(year - yearOfBirth >= AGE_OF_MAJORITY)
         println("Показать экран со скрытым контентом")
-    }
-    if (year - yearOfBirth < AGE_OF_MAJORITY) {
-        println("Вернуться на главный экран")
-    }
+    else println("Вернуться на главный экран")
 }
 
 const val AGE_OF_MAJORITY = 18
