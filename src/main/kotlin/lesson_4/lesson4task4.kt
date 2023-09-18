@@ -1,10 +1,12 @@
 package lesson_4
 
 fun main() {
-    val hands = ODD
-    val legs = EVEN
-    val back = EVEN
-    val abdominal = ODD
+    val day = 5
+    val isEven = day % 2 == 0
+    val hands = !isEven
+    val legs = isEven
+    val back = isEven
+    val abdominal = !isEven
 
     println(
         """
@@ -15,6 +17,3 @@ fun main() {
     """.trimIndent()
     )
 }
-const val DAY_NOW = 5
-const val EVEN: Boolean = DAY_NOW % 2 == 0
-const val ODD: Boolean = DAY_NOW % 2 != 0
