@@ -9,11 +9,11 @@ fun main() {
     val fsInput = result[0].toInt()
     val scInput = result[1].toInt()
 
-    if (fsInput == FIRST_NUM && scInput == SECOND_NUM)
+    if ((fsInput == FIRST_NUM && scInput == SECOND_NUM) || (scInput == FIRST_NUM && fsInput == SECOND_NUM))
         println("Поздравляем! Вы выиграли главный приз!")
-    else if (fsInput == FIRST_NUM || scInput == SECOND_NUM)
+    else if (fsInput == FIRST_NUM || scInput == SECOND_NUM || fsInput == SECOND_NUM || scInput == FIRST_NUM)
         println("Вы выиграли утешительный приз!")
-        else println("Неудача! Крутите барабан!")
+    else println("Неудача! Крутите барабан!")
 
     println("Для победы нужны были числа: $FIRST_NUM и $SECOND_NUM")
 }
