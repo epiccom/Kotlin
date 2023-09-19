@@ -10,7 +10,9 @@ fun main() {
         val userPass = readln()
         if (userPass == USER_PASS) println("Авторизация прошла успешно, добро пожаловать на борт!")
         else println("Не верный пароль!")
-    } else println("Пользователь не найден, хотите зарегестрироваться?")
+    } else {
+        println("Пользователь не найден, хотите зарегестрироваться?")
+    }
 }
 
 const val USER_NAME = "Zaphod"
