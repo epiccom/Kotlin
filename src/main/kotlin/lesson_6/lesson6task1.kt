@@ -7,10 +7,10 @@ fun main() {
     val newUserPass = readln()
     println("Регистрация завершена. Введите имя пользователя для входа:")
     val userName = readln()
-    if(userName == newUserName) {
+    if (userName == newUserName) {
         println("Теперь введите пароль:")
         val userPass = readln()
-        if(userPass == newUserPass) println("Авторизация прошла успешно")
+        if (userPass == newUserPass) println("Авторизация прошла успешно")
         else println("Пароль введен неверно")
     } else {
         println("Пользователь с таким именем не найден")
