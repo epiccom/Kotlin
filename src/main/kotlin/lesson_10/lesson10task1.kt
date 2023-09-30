@@ -1,16 +1,19 @@
 package lesson_10
 
 fun main() {
-    val player = listOf(dice(), dice())
-    println("Игроку выпало: $player")
 
-    val comp = listOf(dice(), dice())
+    val human = rolledDice()
+    println("Игроку выпало: $human")
+
+    val comp = rolledDice()
     println("Компьютеру выпало: $comp")
 
-    if (player.sum() > comp.sum()) println("Выиграло человечество!")
+    if (human > comp) println("Выиграло человечество!")
     else println("Выиграли машины!")
 }
 
-fun dice(): Int {
-    return (1..6).random()
+fun rolledDice(): Int {
+    val dice1 = (1..6).random()
+    val dice2 = (1..6).random()
+    return dice1 + dice2
 }
