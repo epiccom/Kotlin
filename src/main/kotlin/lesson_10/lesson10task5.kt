@@ -39,16 +39,18 @@ fun generatePassword() {
 }
 
 fun authorize() {
-    println("Введите логин:")
-    val inputLogin = readln()
-    println("Введите пароль:")
-    val inputPassword = readln()
-
-    if (checkLoginPassword(inputLogin, inputPassword)) {
-        sendCodeForAuthorization()
-    } else {
-        println("Логин и/или пароль неверны!")
-        return authorize()
+    while (true) {
+        println("Введите логин:")
+        val inputLogin = readln()
+        println("Введите пароль:")
+        val inputPassword = readln()
+        if (checkLoginPassword(inputLogin, inputPassword)) {
+            sendCodeForAuthorization()
+            break
+        }
+        else {
+            println("Логин и/или пароль введены неверно, попробуйте еще раз")
+        }
     }
 }
 
