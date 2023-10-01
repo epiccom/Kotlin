@@ -6,11 +6,10 @@ fun main() {
     println("Введите пароль:")
     val userPassword = readln()
 
-    lenghtMeter(userName, userPassword)
-
+    if (measureLength(userName, userPassword)) println("Логин и пароль недостаточно длинные")
+    else println("Добро пожаловать")
 }
 
-fun lenghtMeter(login: String, password: String) {
-    if (login.count() < 4 && password.count() < 4) println("Логин и пароль недостаточно длинные")
-    else println("Добро пожаловать")
+fun measureLength(login: String, password: String): Boolean {
+    return login.count() < 4 && password.count() < 4
 }
