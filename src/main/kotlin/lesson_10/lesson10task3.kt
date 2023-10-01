@@ -1,9 +1,7 @@
 package lesson_10
 
 fun getRandomString(length: Int): String {
-    val charset =
-        ('0'..'9') + ('!') + ('#') + ('"') + ('$') + ('%') + ('&') + ('\'') + ('(') +
-                (')') + ('*') + ('+') + (',') + ('-') + ('.') + ('/') + (' ')
+    val charset =('0'..'9') +('!'..'/') + (' ')
     return (1..length)
         .map { charset.random() }
         .joinToString("")
