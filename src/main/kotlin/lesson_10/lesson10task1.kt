@@ -2,13 +2,13 @@ package lesson_10
 
 fun main() {
 
-    val human = rolledDice()
-    println("Игроку выпало: $human")
+    val humansResult = rolledDice()
+    println("Игроку выпало: $humansResult")
 
-    val comp = rolledDice()
-    println("Компьютеру выпало: $comp")
+    val computerResult = rolledDice()
+    println("Компьютеру выпало: $computerResult")
 
-    if (human > comp) println("Выиграло человечество!")
+    if (humansResult > computerResult) println("Выиграло человечество!")
     else println("Выиграли машины!")
 }
 
