@@ -3,22 +3,22 @@ package lesson_10
 import kotlin.random.Random
 
 fun main() {
-    registration()
-    authorization()
+    register()
+    authorize()
 }
 
 var login = ""
 var password = ""
-fun registration() {
+fun register() {
     println("Придумайте логин(более 4 символов):")
     login = readln()
 
     if (login.count() < 4) {
         println("Длина должна быть более 4 символов")
-        return registration()
+        return register()
     } else {
         println("Ваш логин: $login")
-        passGenerator()
+        generatePassword()
     }
 }
 
@@ -29,7 +29,7 @@ fun getRandomString(length: Int): String {
         .joinToString("")
 }
 
-fun passGenerator() {
+fun generatePassword() {
     println("Задайте длину пароля:")
     val length = readln().toInt()
 
@@ -38,30 +38,34 @@ fun passGenerator() {
     println("Ваш пароль: $password")
 }
 
-fun authorization() {
+fun authorize() {
     println("Введите логин:")
     val inputLogin = readln()
     println("Введите пароль:")
     val inputPassword = readln()
 
-    if (inputLogin == login && inputPassword == password) {
-        while (true) {
-            val code = Random.nextInt(1000, 9999)
-
-            println("Ваш код авторизации: $code")
-
-            println("Введите ваш код для авторизации:")
-
-            val userCode = readln().toInt()
-            if (userCode == code) {
-                println("Авторизация завершена, добро пожаловать")
-                return
-            } else {
-                println("Код введен неверно, попробуйте еще раз")
-            }
-        }
+    if (checkLoginPassword(inputLogin, inputPassword)) {
+        sendCodeForAuthorization()
     } else {
-        println("Логин и/или пароль введены неверно, попробуйте еще раз")
-        return authorization()
+        println("Логин и/или пароль неверны!")
+        return authorize()
     }
+}
+
+fun sendCodeForAuthorization() {
+    while (true) {
+        val code = Random.nextInt(1000, 9999)
+        println("Ваш код авторизации: $code")
+        println("Введите код для авторизации:")
+        if (readln().toInt() == code) {
+            println("Авторизация завершена, добро пожаловать")
+            break
+        } else {
+            println("Код введен неверно, попробуйте еще раз")
+        }
+    }
+}
+
+fun checkLoginPassword(inputLogin: String, inputPassword: String): Boolean {
+    return inputLogin == login && inputPassword == password
 }
