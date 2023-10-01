@@ -1,7 +1,7 @@
 package lesson_10
 
 fun main() {
-    roundOfDice()
+    startRoundOfDice()
     askForRound()
 }
 
@@ -9,19 +9,19 @@ var humanWin = 0
 fun askForRound() {
     println("Хотите бросить кости еще раз Введите Да или Нет")
     if (readln().equals("да", true)) {
-        roundOfDice()
+        startRoundOfDice()
         return askForRound()
     } else {
         println("Человек выиграл $humanWin раз(а)")
     }
 }
 
-fun roundOfDice() {
+fun startRoundOfDice() {
 
-    val human = rolledDice()
+    val human = rollDice()
     println("Игроку выпало: $human")
 
-    val comp = rolledDice()
+    val comp = rollDice()
     println("Компьютеру выпало: $comp")
 
     if (human > comp) {
@@ -32,7 +32,7 @@ fun roundOfDice() {
     }
 }
 
-fun rolledDice(): Int {
+fun rollDice(): Int {
     val dice1 = (1..6).random()
     val dice2 = (1..6).random()
     return dice1 + dice2
