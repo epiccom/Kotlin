@@ -4,10 +4,10 @@ class Contact(
     val avatar: String,
     val firstName: String,
     val secondName: String,
-    val number: Int,
-    val homeNumber: Int,
+    val number: String,
+    val homeNumber: String,
     val email: String,
-    val favoriteContacts: List<FavoriteContacts>,
+    val favoriteContact: List<FavoriteContact>,
 ) {
     fun sendMessage() {
         println("написать")
@@ -30,21 +30,21 @@ class Contact(
     }
 }
 
-class FavoriteContacts(
+class FavoriteContact(
     val name: String,
     val number: String,
 )
 
 fun main() {
-    val wifeContact = FavoriteContacts(
+    val wifeContact = FavoriteContact(
         name = "жена",
         number = "userName",
     )
-    val girlfriend1Contact = FavoriteContacts(
+    val girlfriend1Contact = FavoriteContact(
         name = "подруга",
         number = "userName",
     )
-    val girlfriend2Contact = FavoriteContacts(
+    val girlfriend2Contact = FavoriteContact(
         name = "подруга",
         number = "userName",
     )
@@ -55,6 +55,6 @@ fun main() {
         number = "8(999) 999-42-42",
         homeNumber = "8(999) 888-42-42",
         email = "mail@mail.ru",
-        favoriteContacts = listOf(wifeContact, girlfriend1Contact, girlfriend2Contact)
+        favoriteContact = listOf(wifeContact, girlfriend1Contact, girlfriend2Contact),
     )
 }
