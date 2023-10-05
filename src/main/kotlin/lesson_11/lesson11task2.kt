@@ -1,7 +1,7 @@
 package lesson_11
 
 fun main() {
-    val newUser = User(0, "Andrew", "1234", "Andrew@gmail.com")
+    val newUser = User0(0, "Andrew", "1234", "Andrew@gmail.com")
     newUser.viewInformation()
     newUser.writeBio()
     newUser.changePassword()
@@ -9,7 +9,7 @@ fun main() {
     newUser.sendEmail()
 }
 
-class User(
+class User0(
     val id: Int,
     val login: String,
     var password: String,
