@@ -1,6 +1,6 @@
 package lesson_12
 
-class InfoOfWeather1(var dayT: Int, var nightT: Int, var rain: Boolean = true, var atPr: Int) {
+class InfoOfWeather2(var dayT: Int, var nightT: Int, var rain: Boolean = true, var atPr: Int) {
     init {
         println(
             "Температура днём: $dayT°, температура ночью: $nightT°," +
@@ -10,7 +10,7 @@ class InfoOfWeather1(var dayT: Int, var nightT: Int, var rain: Boolean = true, v
 }
 
 fun main() {
-    val object1 = InfoOfWeather1(20, 5, true, 746)
-    val object2 = InfoOfWeather1(15, -5, false, 756)
-    val object3 = InfoOfWeather1(40, 15, true, 776)
+    val object1 = InfoOfWeather2(20, 5, true, 746)
+    val object2 = InfoOfWeather2(15, -5, false, 756)
+    val object3 = InfoOfWeather2(40, 15, true, 776)
 }
