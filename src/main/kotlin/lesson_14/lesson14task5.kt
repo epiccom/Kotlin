@@ -1,5 +1,6 @@
 package lesson_14
 
+import kotlin.math.PI
 import kotlin.math.sqrt
 
 abstract class Figure(val color: String) {
@@ -9,11 +10,11 @@ abstract class Figure(val color: String) {
 
 class Circle(color: String, val radius: Int) : Figure(color) {
     override fun calculateArea(): Double {
-        return 3.14 * (radius * radius)
+        return PI * (radius * radius)
     }
 
     override fun calculatePerimeter(): Double {
-        return 2 * 3.14 * radius
+        return 2 * PI * radius
     }
 }
 
