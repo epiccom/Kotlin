@@ -1,34 +1,33 @@
 package lesson_15
 
-interface MovableCrucian {
+interface Swimmable {
     fun swim() {
-        println("Карась может плавать")
+        println("может плавать")
     }
 }
 
-interface MovableGull {
+interface Flyable {
     fun fly() {
-        println("Чайка может летать")
+        println("может летать")
     }
 }
 
-interface MovableDuck {
-    fun flyAndSwim() {
-        println("Утка может летать и плавать")
-    }
-}
-
-class Crucian(val name: String) : MovableCrucian
-class Gull(val name: String) : MovableGull
-class Duck(val name: String) : MovableDuck
+class Crucian(val name: String) : Swimmable
+class Gull(val name: String) : Flyable
+class Duck(val name: String) : Swimmable, Flyable
 
 fun main() {
     val crucian = Crucian("Карась")
     val gull = Gull("Чайка")
     val duck = Duck("Утка")
 
+    print("${crucian.name} ")
     crucian.swim()
+    print("${gull.name} ")
     gull.fly()
-    duck.flyAndSwim()
+    print("${duck.name} ")
+    duck.swim()
+    print("и ")
+    duck.fly()
 
 }
