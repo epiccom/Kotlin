@@ -10,6 +10,6 @@ interface SearchComponent {
     }
 }
 fun main() {
-    val guitar = Instrument("Гитара", 10)
+    val guitar = Instrument("Гитара ", 10)
     guitar.searchComponent()
 }
