@@ -8,21 +8,21 @@ abstract class WeatherInformation {
     abstract fun sendInformation()
 }
 
-class InfoOfTemperature() : WeatherInformation() {
+class InfoOfTemperature(val temperature: Int) : WeatherInformation() {
     override fun sendInformation() {
-        println("Температура воздуха +16°С")
+        println("Температура воздуха $temperature°С")
     }
 }
 
-class InfoOfPrecipitation() : WeatherInformation() {
+class InfoOfPrecipitation(val precipitation: Double) : WeatherInformation() {
     override fun sendInformation() {
-        println("Количество осадков 0.1 мм")
+        println("Количество осадков $precipitation мм")
     }
 }
 
 fun main() {
-    val temp = InfoOfTemperature()
-    val precipitation = InfoOfPrecipitation()
+    val temp = InfoOfTemperature(16)
+    val precipitation = InfoOfPrecipitation(0.1)
 
     temp.connectServer()
     temp.sendInformation()
