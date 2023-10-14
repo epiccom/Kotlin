@@ -10,8 +10,18 @@ interface Transportable {
     }
 }
 
-class CargoCar(val name: String) : Transportable
-class PassengerCar(val name: String) : Transportable
+class CargoCar(val name: String) : Transportable {
+    override fun cargoAndPassengers(name: String, cargo: Int, passengers: Int) {
+        if (passengers > 1 || cargo > 2) println("$name может перевозить не более 2 тонн груза и 1 пассажира")
+        else println("$name перевез $cargo тонны груза и $passengers пассажира(ов)")
+    }
+}
+class PassengerCar(val name: String) : Transportable {
+    override fun passenger(name: String, amount: Int) {
+        if (amount > 3) println("$name может перевозить не более 3 пассажиров")
+        else println("$name перевез $amount пассажиров")
+    }
+}
 
 fun main() {
     val car1 = CargoCar("Грузовик")
