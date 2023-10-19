@@ -1,9 +1,8 @@
 package lesson_16
 
 class Dice() {
-    var random: Int = 0
+    private var random = (1..6).random()
     fun rollDice() {
-        random = (1..6).random()
         println("Выпало $random")
     }
 }
