@@ -1,14 +1,14 @@
 package lesson_16
 
-private const val pi = 3.14
+private const val PI = 3.14
 
 class Circle(private val r: Int) {
     fun calculateCircleLength() {
-        println("Длина окружности равна: ${2 * pi * r}")
+        println("Длина окружности равна: ${2 * PI * r}")
     }
 
     fun calculateCircleArea() {
-        println("Площадь окружности равна: ${pi * (r * r)}")
+        println("Площадь окружности равна: ${PI * (r * r)}")
     }
 }
 
