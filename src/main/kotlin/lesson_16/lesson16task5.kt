@@ -2,7 +2,7 @@ package lesson_16
 
 class Player(val name: String, private var health: Int, private var power: Int) {
     fun takingDamage(damage: Int) {
-        if (health == 0 || health < 0) {
+        if (health <= 0) {
             death()
         } else {
             health -= damage
@@ -12,8 +12,13 @@ class Player(val name: String, private var health: Int, private var power: Int) 
 
     fun healing() {
         if (health > 0) {
-            health += 1
-            println("+1 к здоровью")
+            if (health <= 5) {
+                health += 1
+                println("+1 к здоровью")
+            }
+            else  {
+                println("Достигнут максимум здоровья")
+            }
         } else {
             println("Нельзя лечиться когда ты уже умер")
         }
@@ -30,6 +35,7 @@ fun main() {
     val player = Player("Player 1", 5, 2)
     player.takingDamage(3)
     player.healing()
+    player.takingDamage(2)
     player.takingDamage(2)
     player.takingDamage(2)
     player.takingDamage(2)
