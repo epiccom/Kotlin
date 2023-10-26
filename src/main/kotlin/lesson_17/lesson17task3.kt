@@ -1,18 +1,14 @@
 package lesson_17
 
-class Package() {
-    var name = "Папка"
-        get() = if (flag) "Скрытая папка" else field
-    var files: Int = 5
-        get() = if (flag) 0 else field
-    var flag = false
+class Package(name: String, files: Int, private var isSecret: Boolean) {
+    var name = name
+        get() = if (isSecret) "Скрытая папка" else field
+    var files = files
+        get() = if (isSecret) 0 else field
+
 }
 
 fun main() {
-    val pack = Package()
-    pack.name = "Новая папка"
-    pack.flag = true
-    println(pack.name)
-    println(pack.files)
-
+    val pack = Package("Папка", 5, true)
+    println("Имя папки: ${pack.name}, кол-во файлов: ${pack.files}")
 }
