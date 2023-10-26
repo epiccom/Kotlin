@@ -1,6 +1,6 @@
 package lesson_17
 
-class Quiz() {
+class Quiz {
     var question = "Вопрос"
         get() = field
         set(value) {
