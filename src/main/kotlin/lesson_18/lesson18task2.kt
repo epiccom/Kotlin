@@ -1,20 +1,17 @@
 package lesson_18
 
-open class Dice0 {
-    open fun rollDice() {}
+abstract class Dice0 {
+    open fun rollDice(amt: Int) {}
 }
-class Dice4 : Dice0() {
-    override fun rollDice() {
-        println("Выпало ${(1..4).random()}")
+class Dice1 : Dice0() {
+    override fun rollDice(amt: Int) {
+        println("Выпало ${(1..amt).random()}")
     }
 }
-class Dice6 : Dice0() {
-    override fun rollDice() {
-        println("Выпало ${(1..6).random()}")
-    }
-}
-class Dice8 : Dice0() {
-    override fun rollDice() {
-        println("Выпало ${(1..8).random()}")
-    }
+
+fun main() {
+    val dice = Dice1()
+    dice.rollDice(4)
+    dice.rollDice(6)
+    dice.rollDice(8)
 }
