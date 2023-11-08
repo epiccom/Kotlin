@@ -12,7 +12,7 @@ class CRMSystem {
         number: Int,
         order: List<String>,
     ) {
-        println("Заказаны следующие товары: $order")
+        println("Заказаны следующие товары: ${order.joinToString()}")
     }
 }
 
